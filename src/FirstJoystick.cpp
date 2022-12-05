@@ -1,9 +1,7 @@
 #include <Arduino.h>
-int d7 =7;
 int d8 =8;
 
 void setup() {
- pinMode(d7,INPUT_PULLUP);
  pinMode(d8,INPUT_PULLUP);
  
 Serial.begin(9600);
