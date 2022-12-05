@@ -1,35 +1,32 @@
 #include <Arduino.h>
-#include <AlignedJoy.h>
+int d7 =7;
+int d8 =8;
 
-// joystick 1
-#define PIN_JOY1_X   0  //(up  down)
-#define PIN_JOY1_Y   1  //(left  right)
-// joystick 2
-#define PIN_JOY2_X   2  //(up  down)
-#define PIN_JOY2_Y   3  //(left  right)
-
-AlignedJoy joystick_1(PIN_JOY1_X, PIN_JOY1_Y);
-AlignedJoy joystick_2(PIN_JOY2_X, PIN_JOY2_Y);
-
-// 0 to 1023
 void setup() {
- // DEBUG
- Serial.begin(9600);
- while(!Serial){} 
+ pinMode(d7,INPUT_PULLUP);
+ pinMode(d8,INPUT_PULLUP);
+ 
+Serial.begin(9600);
 }
 
 void loop() {
+  int X = analogRead(A1);
+  int Y = analogRead(A0);
+  int x = map(X, 1, 1023, 1917, 2);
+  int y = map(Y, 1, 1023, 2, 1077);
+  
 
- // print joystick 1 axes value
- Serial.print("joystick_1 X -> ");
- Serial.print(joystick_1.read(X));
- Serial.print(" | Y -> ");
- Serial.print(joystick_1.read(Y));
- 
- // print joystick 1 axes value
- Serial.print(" -|- joystick_2 X -> ");
- Serial.print(joystick_2.read(X));
- Serial.print(" | Y -> ");
- Serial.println(joystick_2.read(Y));
- delay(500);
+if(digitalRead(d8)==LOW){
+Serial.print("c");
+
+}else{
+  Serial.print("z");
+}
+Serial.print(" ");
+Serial.print(x);
+Serial.print(" ");
+Serial.print(y);
+Serial.print(" ");
+Serial.println("m");
+delay(180);
 }
