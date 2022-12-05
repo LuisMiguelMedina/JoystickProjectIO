@@ -1,3 +1,3 @@
-# Why?
+# DevNotes
 
-## DevNotes: So, python was successful! Arduino Uno has its limitations with hardware communications, it cannot simulate an HID (Human Interface Device) by itself, so i have the idea of not making arduino doing it all by itself. Instead we use serial port communication with python library "pyserial" to read the serial output and interprete the information in the way that we want, unlike arduino python can simulate a HID so we program it to respond to joystick cordinate mapping and in return it will copy the same cords to simulate a Mouse HID.
+## So, python was successful! Arduino Uno has its limitations with hardware communications, it cannot simulate an HID (Human Interface Device) by itself, so i have the idea of not making arduino doing it all by itself. Instead we use serial port communication with python library "pyserial" to read the serial output and interprete the information in the way that we want, unlike arduino python can simulate a HID so we program it to respond to joystick cordinate mapping and in return it will copy the same cords to simulate a Mouse HID.
