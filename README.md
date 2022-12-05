@@ -1,3 +1,5 @@
-# Why?
+# DevNotes
 
-## DevNotes: So, java didnt work but im glad it didnt, python is better. Now, in order to use both joysticks we are going to need 2 microchips for each joystick. This processes are diferent but if they are running in the same computer it will became a whole. At this point we are proving that you can build anything with just software.
+## In case you didn't get the last DevNotes, we can't use two joysticks because we only have 1 serial communication per operation, this is a hardware limitation so in order to fix this issue we are just going to use another arduino uno (lol).
+
+## Both Keyboard and Mouse HID works great individually, because SOMEONE FORGOT THE ARDUINO IN A FRIDAY we cannot prove that both processes works at the same time, so till monday arrives im going to develop a basic interface for the user so it can change the keyboard values of the joystick (Sounds easy but i just learn python in this project).
