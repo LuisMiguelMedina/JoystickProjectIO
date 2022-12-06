@@ -1,6 +1,10 @@
 import serial, pydirectinput 
 from pynput.keyboard import Key, Controller
 
+from JoystickPython import interfaz
+
+letras = interfaz.manda_arreglo
+
 keyboard = Controller()
 
 ser = serial.Serial("COM4",'9600')  #Enter Arduino Port Number
@@ -9,16 +13,16 @@ while True:
     if(ser.inWaiting()>0):
         data = ser.read()
         if data == b"1":
-            keyboard.press('w')
-            keyboard.release('w')
+            keyboard.press(letras[0])
+            keyboard.release(letras[0])
         if data == b"2":
-            keyboard.press('s')
-            keyboard.release('s')
+            keyboard.press(letras[1])
+            keyboard.release(letras[1])
         if data == b"3":
-            keyboard.press('d')
-            keyboard.release('d')
+            keyboard.press(letras[2])
+            keyboard.release(letras[2])
         if data == b"4":
-            keyboard.press('a')
-            keyboard.release('a')
+            keyboard.press(letras[3])
+            keyboard.release(letras[3])
         if data == b"5":
             pydirectinput.click(button='right')
