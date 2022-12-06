@@ -10,15 +10,20 @@ BTN_BG_COLOR = "#11111b"
 
 # Asignamos las variables de los campos al arreglo
 def set_variables():
-    letras_botones[0] = entry_buton_1.get()
-    letras_botones[1] = entry_buton_2.get()
-    letras_botones[2] = entry_buton_3.get()
-    letras_botones[3] = entry_buton_4.get()
+    letras_botones[0] = entry_buton_1.get
+    letras_botones[1] = entry_buton_2.get
+    letras_botones[2] = entry_buton_3.get
+    letras_botones[3] = entry_buton_4.get
     confirmation_pop_up()
+
+#Enviamos el arreglo (Para usarlo en el archivo KeyboardController)
+def manda_arreglo():
+    return letras_botones
 
 #Enseñamos como fue configurado los botones
 def confirmation_pop_up():
-    pop_up = Toplevel(screen)
+
+    pop_up = Tk()
     pop_up.config(background=BG_COLOR)
     pop_up.title('botones seleccionados')
     pop_up.geometry("200x150")
@@ -33,9 +38,18 @@ def confirmation_pop_up():
     btn = Button(pop_up, text="Ok", command=pop_up.destroy)
     btn.pack()
 
-#Enviamos el arreglo (Para usarlo en el archivo KeyboardController)
-def manda_arreglo():
-    return letras_botones
+#Restablece los valores predeterminados
+def set_default():
+    letras_botones[0] = 'w'
+    letras_botones[1] = 'a'
+    letras_botones[2] = 's'
+    letras_botones[3] = 'd'
+    confirmation_pop_up()
+
+def Go_arduino():
+    screen.destroy
+
+
 
 
 #Ventana inicial
@@ -95,12 +109,15 @@ entry_buton_4.insert(0, letras_botones[3])
 
 
 #Boton de confirmar la assignacion de teclas
-button_confirmar = Button(text="Confirmar", command=set_variables)
+button_confirmar = Button(text="Confirmar", command= set_variables())
 button_confirmar.grid(column=0, row=5, columnspan=2)
 
 #Boton de enviar el arreglo donde guarda los datos de las teclas asginadas
-button_enviar = Button(text="Chingar el programa", command=manda_arreglo)
-button_enviar.grid(column=3, row=5, columnspan=1)
+button_default = Button(text="Default", command= set_default)
+button_default.grid(column=3, row=5, columnspan=1)
+
+button_enviar = Button(text="Finish", command= Go_arduino)
+button_enviar.grid(column=0, row=5, columnspan=1)
 
 #Se repite el main 
 screen.mainloop()
