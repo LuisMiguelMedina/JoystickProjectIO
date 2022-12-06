@@ -9,7 +9,7 @@ Serial.begin(9600);
 void loop() {
   int X = analogRead(A3);
   int Y = analogRead(A2);
-  int x = map(X, 1, 1023, 1917, 2);
+  int x = map(X, 1, 1023, 1077, 2);
   int y = map(Y, 1, 1023, 2, 1077);
   
   if(digitalRead(d7)==LOW){
