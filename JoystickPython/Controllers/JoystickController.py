@@ -1,4 +1,4 @@
-import serial, warnings, serial.tools.list_ports
+import serial, serial.tools.list_ports
 import pyautogui as pg  
 from pynput.keyboard import Controller
 
