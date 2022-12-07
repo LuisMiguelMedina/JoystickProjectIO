@@ -45,53 +45,54 @@ def close_window():
 
 
 screen = Tk()
-screen.title("selector de botones miados")
+screen.title("Selector de botones")
 screen.config(bg=BG_COLOR)
-title_label = Label(text="Bienvenido a nuestro selector de botones miados")
-title_label.config(bg=BG_COLOR, fg=FG_COLOR, font=('arial', 12))
-title_label.grid(column=0, row=0, columnspan=2, pady=20)
 
-label_button_1 = Label(text=f"boton 1")
-label_button_1.grid(column=0, row=1)
+title_label = Label(text="Selecciona los botones del Joystick", justify=CENTER)
+title_label.config(bg=BG_COLOR, fg=FG_COLOR, font=('arial', 12))
+title_label.grid(column=1, row=0, columnspan=2, pady=20)
+
+label_button_1 = Label(text=f"Boton 1")
+label_button_1.grid(column=1, row=1)
 label_button_1.config(bg=BG_COLOR, fg=FG_COLOR)
 
 entry_buton_1 = Entry(width=10, justify=CENTER)
-entry_buton_1.grid(column=1, row=1)
+entry_buton_1.grid(column=2, row=1)
 entry_buton_1.insert(0, letras_botones[0])
 
-label_button_2 = Label(text=f"boton 2")
-label_button_2.grid(column=0, row=2)
+label_button_2 = Label(text=f"Boton 2")
+label_button_2.grid(column=1, row=2)
 label_button_2.config(bg=BG_COLOR, fg=FG_COLOR)
 
 entry_buton_2 = Entry(width=10, justify=CENTER)
-entry_buton_2.grid(column=1, row=2, pady=20, padx=20)
+entry_buton_2.grid(column=2, row=2, pady=20, padx=20)
 entry_buton_2.insert(0, letras_botones[1])
 
-label_button_3 = Label(text=f"boton 3")
-label_button_3.grid(column=0, row=3)
+label_button_3 = Label(text=f"Boton 3")
+label_button_3.grid(column=1, row=3)
 label_button_3.config(bg=BG_COLOR, fg=FG_COLOR)
 
 entry_buton_3 = Entry(width=10, justify=CENTER)
-entry_buton_3.grid(column=1, row=3)
+entry_buton_3.grid(column=2, row=3)
 entry_buton_3.insert(0, letras_botones[2])
 
-label_button_4 = Label(text=f"boton 4")
-label_button_4.grid(column=0, row=4)
+label_button_4 = Label(text=f"Boton 4")
+label_button_4.grid(column=1, row=4)
 label_button_4.config(bg=BG_COLOR, fg=FG_COLOR)
 
 entry_buton_4 = Entry(width=10, justify=CENTER)
-entry_buton_4.grid(column=1, row=4, pady=20, padx=20)
+entry_buton_4.grid(column=2, row=4, pady=20, padx=20)
 entry_buton_4.insert(0, letras_botones[3])
 
 #Boton de confirmar la assignacion de teclas
 button_confirmar = Button(text="Confirmar", command=set_variables)
-button_confirmar.grid(column=0, row=5, columnspan=2)
+button_confirmar.grid(column=1, row=5, columnspan=2)
 
 #Boton de enviar el arreglo donde guarda los datos de las teclas asginadas
 button_default = Button(text="Default", command=set_default)
-button_default.grid(column=3, row=5, columnspan=1)
+button_default.grid(column=0, row=5, columnspan=1)
 
-button_cerrar = Button(text="Exit", command=close_window)
-button_cerrar.grid(column=0, row=5, columnspan=1)
+button_cerrar = Button(text="Next", command=close_window)
+button_cerrar.grid(column=3, row=5, columnspan=1)
 
 screen.mainloop()
