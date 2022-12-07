@@ -58,15 +58,15 @@ def keyboard_controller(keys):
         if c=='c':
             pg.click(button='left')
         if  h == '1':
-            keyboard.press(key[0])
-            keyboard.release(key[0])
+            keyboard.press(keys[0])
+            keyboard.release(keys[0])
         if  i == '2':
-            keyboard.press(key[1])
-            keyboard.release(key[1])
+            keyboard.press(keys[1])
+            keyboard.release(keys[1])
         if  j == '3':
-            keyboard.press(key[2])
-            keyboard.release(key[2])
+            keyboard.press(keys[2])
+            keyboard.release(keys[2])
         if  k == '4':
-            keyboard.press(key[3])
-            keyboard.release(key[3])
+            keyboard.press(keys[3])
+            keyboard.release(keys[3])
         pg.moveTo(int(x), int(y))
