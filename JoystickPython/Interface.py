@@ -83,7 +83,6 @@ entry_buton_4 = Entry(width=10, justify=CENTER)
 entry_buton_4.grid(column=1, row=4, pady=20, padx=20)
 entry_buton_4.insert(0, letras_botones[3])
 
-
 #Boton de confirmar la assignacion de teclas
 button_confirmar = Button(text="Confirmar", command=set_variables)
 button_confirmar.grid(column=0, row=5, columnspan=2)
